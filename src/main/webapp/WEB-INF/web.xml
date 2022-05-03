@@ -4,4 +4,48 @@
   <welcome-file-list>
     <welcome-file>accueil.jsp</welcome-file>
   </welcome-file-list>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error_404.jsp</location>
+</error-page>
+  <servlet>
+    <description></description>
+    <display-name>UserServlet</display-name>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>sn.simplon.web.UserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/UserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UseerServlet</display-name>
+    <servlet-name>UseerServlet</servlet-name>
+    <servlet-class>sn.simplon.web.UserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UseerServlet</servlet-name>
+    <url-pattern>/UseerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProduitServlet</display-name>
+    <servlet-name>ProduitServlet</servlet-name>
+    <servlet-class>sn.simplon.web.ProduitServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProduitServlet</servlet-name>
+    <url-pattern>/ProduitServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CategorieServlet</display-name>
+    <servlet-name>CategorieServlet</servlet-name>
+    <servlet-class>sn.simplon.web.CategorieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CategorieServlet</servlet-name>
+    <url-pattern>/CategorieServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
