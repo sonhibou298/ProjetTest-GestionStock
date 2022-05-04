@@ -26,20 +26,20 @@ public class UserServlet extends HttpServlet {
     }
     	@Override
     	public void init(ServletConfig config) throws ServletException {
-    		userdao = new UserImpl();
+//    		userdao = new UserImpl(); 
     	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/views/users/list.jsp").forward(request, response);
-		User user = new User();
-		user.setNom("Sene");
-		user.setPrenom("Sonhibou");
-		user.setLogin("sonhibou@gmail.com");
-		user.setPassword("passer");
-		int result = userdao.add(user);
-		response.getWriter().print(result);
+//		User user = new User();
+//		user.setNom("Sene");
+//		user.setPrenom("Sonhibou");
+//		user.setLogin("sonhibou@gmail.com");
+//		user.setPassword("passer");
+//		int result = userdao.add(user);
+//		response.getWriter().print(result);
 	}
 
 	/**

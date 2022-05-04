@@ -10,7 +10,7 @@ import java.io.IOException;
 @WebServlet("/Produit")
 public class ProduitServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+        
     /**
      * @see HttpServlet#HttpServlet()
      */
