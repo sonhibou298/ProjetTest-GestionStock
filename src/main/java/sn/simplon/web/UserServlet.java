@@ -32,6 +32,7 @@ public class UserServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("WEB-INF/views/users/list.jsp").forward(request, response);
 		User user = new User();
 		user.setNom("Sene");
 		user.setPrenom("Sonhibou");

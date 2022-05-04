@@ -29,19 +29,45 @@ public class UserImpl implements IUser{
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<User> listeUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			return em.createQuery("SELECT u FROM User u").getResultList();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
-	public int deleteUser(User user) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	public int updateUser(User user) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			em.getTransaction().begin();
+			em.merge(user);
+			em.getTransaction().commit();
+			return 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+		
+	}
+
+	public int deleteUser(int id) {
+		try {
+			em.getTransaction().begin();
+			em.remove(em.find(User.class, id));
+			em.getTransaction().commit();
+			return 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
+
+	public User get(int id) {
+		
+		return em.find(User.class, id);
 	}
 
 }

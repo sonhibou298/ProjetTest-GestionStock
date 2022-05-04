@@ -58,23 +58,23 @@
                     <label>Navigation</label>
                 </li>
                 <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item active">
-                    <a href="index.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Accueil</span></a>
+                    <a href="index.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Tableau de bord</span></a>
                 </li>
                 <li class="nav-item pcoded-menu-caption">
                     <label>UI Element</label>
                 </li>
                 <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds" class="nav-item pcoded-hasmenu">
-                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Catégorie</span></a>
+                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Codification</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="bc_button.html" class="">Gestion des Catégorie</a></li>
-                        <li class=""><a href="bc_badges.html" class="">Gestion des Produits</a></li>
+                        <li class=""><a href="Categorie?page=list" class="">Gestion des Catégorie</a></li>
+                        <li class=""><a href="Produit?page=list" class="">Gestion des Produits</a></li>
                         
                     </ul>
                 </li>
                 <li data-username="Authentication Sign up Sign in reset password Change password Personal information profile settings map form subscribe" class="nav-item pcoded-hasmenu">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span class="pcoded-mtext">Administration</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="auth-signup.html" class="" target="_blank">Gestion Administration </a></li>
+                        <li class=""><a href="User?page=list" class="" target="_blank">Gestion Administration </a></li>
                         <li class=""><a href="auth-signin.html" class="" target="_blank">Se déconnecter</a></li>
                     </ul>
                 </li>

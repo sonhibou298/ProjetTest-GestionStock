@@ -7,14 +7,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/Produit")
-public class ProduitServlet extends HttpServlet {
+@WebServlet("/Accueil")
+public class AccueilServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProduitServlet() {
+    public AccueilServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -24,7 +24,7 @@ public class ProduitServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("WEB-INF/views/produits/list.jsp").forward(request, response);
+		request.getRequestDispatcher("accueil.jsp").forward(request, response);
 	}
 
 	/**

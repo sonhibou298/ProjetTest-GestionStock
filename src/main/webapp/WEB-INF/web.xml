@@ -7,7 +7,7 @@
   <error-page>
     <error-code>404</error-code>
     <location>/error_404.jsp</location>
-</error-page>
+  </error-page>
   <servlet>
     <description></description>
     <display-name>UserServlet</display-name>
@@ -47,5 +47,15 @@
   <servlet-mapping>
     <servlet-name>CategorieServlet</servlet-name>
     <url-pattern>/CategorieServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AccueilServlet</display-name>
+    <servlet-name>AccueilServlet</servlet-name>
+    <servlet-class>sn.simplon.web.AccueilServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccueilServlet</servlet-name>
+    <url-pattern>/AccueilServlet</url-pattern>
   </servlet-mapping>
 </web-app>

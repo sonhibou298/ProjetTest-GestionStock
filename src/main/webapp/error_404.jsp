@@ -19,7 +19,7 @@ DRIBBBLE: https://dribbble.com/shots/4330167-404-Page-Lost-In-Space
                 </div>
                 <div class="navbar-links">
                     <ul>
-                      <li><a href="http://salehriaz.com/404Page/404.html" target="_blank">Accueil</a></li>
+                      <li><a href="Accueil" target="_blank">Accueil</a></li>
                       <li><a href="http://salehriaz.com/404Page/404.html" target="_blank">Gestion categories</a></li>
                       <li><a href="http://salehriaz.com/404Page/404.html" target="_blank">Gestion produits</a></li>
                       <li><a href="http://salehriaz.com/404Page/404.html" class="btn-request" target="_blank">Request A Demo</a></li>
@@ -28,7 +28,7 @@ DRIBBBLE: https://dribbble.com/shots/4330167-404-Page-Lost-In-Space
             </div>
             <div class="central-body">
                 <img class="image-404" src="http://salehriaz.com/404Page/img/404.svg" width="300px">
-                <a href="http://salehriaz.com/404Page/404.html" class="btn-go-home" target="_blank">Accueil</a>
+                <a href="Accueil" class="btn-go-home" target="_blank">Accueil</a>
             </div>
             <div class="objects">
                 <img class="object_rocket" src="http://salehriaz.com/404Page/img/rocket.svg" width="40px">
