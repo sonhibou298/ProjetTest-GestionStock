@@ -10,11 +10,13 @@
 					<form action="">
 						<div class="form-group">
 							<label>Libelle catégorie</label>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" required="required">
 						</div><br>
 						
 						<div class="form-group">
-							<button type="submit" class="btn btn-outline-primary">Ajouter</button>
+							<button type="submit" class="btn btn-outline-success">Ajouter</button>
+							<button type="reset" class="btn btn-outline-danger">Annuler</button>
+							
 						</div>
 					</form>
 			</div>

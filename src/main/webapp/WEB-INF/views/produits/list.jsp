@@ -10,34 +10,36 @@
 					<form action="">
 						<div class="form-group">
 							<label>Nom du produit</label>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" required="required">
 						</div>
 					
 						<div class="form-group">
 							<label>Prix unitaire</label>
-							<input type="number" class="form-control">
+							<input type="number" class="form-control" required="required">
 						</div>
 						
 						<div class="form-group">
 							<label>Quantité stock</label>
-							<input type="number" class="form-control">
+							<input type="number" class="form-control" required="required">
 						</div>
 						
 						<div class="form-group">
 							<label>Date d'expiration</label>
-							<input type="date" class="form-control">
+							<input type="date" class="form-control" required="required">
 						</div>
 						
 						 <div class="form-group">
 						    <label for="exampleFormControlSelect1">Catégorie du produit</label>
-						    <select class="form-control" id="exampleFormControlSelect1">
+						    <select class="form-control" id="exampleFormControlSelect1" required="required">
 						      <option></option>
 						     
 						    </select>
 						  </div>
 						
 						<div class="form-group">
-							<button type="submit" class="btn btn-outline-primary">Ajouter</button>
+							<button type="submit" class="btn btn-outline-success">Ajouter</button>
+							<button type="reset" class="btn btn-outline-danger">Annuler</button>
+							
 						</div>
 					</form>
 			</div>

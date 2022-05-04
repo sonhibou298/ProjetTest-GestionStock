@@ -10,26 +10,27 @@
 					<form action="">
 						<div class="form-group">
 							<label>Nom</label>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" required="required">
 						</div>
 					
 						<div class="form-group">
 							<label>Prenom</label>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" required="required">
 						</div>
 						
 						<div class="form-group">
 							<label>Login</label>
-							<input type="email" class="form-control">
+							<input type="email" class="form-control" required="required">
 						</div>
 						
 						<div class="form-group">
 							<label>Mot de passe</label>
-							<input type="password" class="form-control">
+							<input type="password" class="form-control" required="required">
 						</div><br>
 						
 						<div class="form-group">
-							<button type="submit" class="btn btn-outline-primary">Ajouter</button>
+							<button type="submit" class="btn btn-outline-success">Ajouter</button>
+							<button type="reset" class="btn btn-outline-danger">Annuler</button>
 						</div>
 					</form>
 			</div>
@@ -58,9 +59,6 @@
 		</div>
 	
 	</div>
-	
-	
-	
 	
 </div>
 <jsp:include page="../../../footer.jsp"></jsp:include>
