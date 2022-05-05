@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="../../../header.jsp"></jsp:include>
 <div class="container-fluid">
 	<div class="row">
@@ -7,10 +8,10 @@
 					<h3>Formulaire d'ajout d'une catégorie</h3>
 				</div>
 				<div class="card-body">
-					<form action="">
+					<form action="Categorie" method="post">
 						<div class="form-group">
 							<label>Libelle catégorie</label>
-							<input type="text" class="form-control" required="required">
+							<input type="text" name="libelle" class="form-control" required="required">
 						</div><br>
 						
 						<div class="form-group">
@@ -37,6 +38,11 @@
 							<th>Action</th>
 							<th>Action</th>
 						</tr>
+						<c:forEach items="${listCategorie}" var="cat">
+							<tr>
+								<td>${cat.libelle}</td>
+							</tr>
+						</c:forEach>
 					</table>
 				</div>
 		</div>

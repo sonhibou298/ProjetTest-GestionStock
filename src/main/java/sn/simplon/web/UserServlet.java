@@ -11,6 +11,7 @@ import sn.simplon.dao.UserImpl;
 import sn.simplon.entities.User;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/User")
 public class UserServlet extends HttpServlet {
@@ -26,28 +27,36 @@ public class UserServlet extends HttpServlet {
     }
     	@Override
     	public void init(ServletConfig config) throws ServletException {
-//    		userdao = new UserImpl(); 
+    		userdao = new UserImpl(); 
     	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/views/users/list.jsp").forward(request, response);
-//		User user = new User();
-//		user.setNom("Sene");
-//		user.setPrenom("Sonhibou");
-//		user.setLogin("sonhibou@gmail.com");
-//		user.setPassword("passer");
-//		int result = userdao.add(user);
-//		response.getWriter().print(result);
+		List<User> users = userdao.listeUsers();
+		request.setAttribute("list_users", users); 
+//
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String nom = request.getParameter("nom").toString();
+		String prenom = request.getParameter("prenom").toString();
+		String login = request.getParameter("login").toString();
+		String password = request.getParameter("password").toString();
+		
+		User user = new User();
+		user.setNom(nom);
+		user.setPrenom(prenom);
+		user.setLogin(login);
+		user.setPassword(password);
+		
+		userdao.add(user);
+		response.sendRedirect("User?page=list");
+		
 	}
 
 }

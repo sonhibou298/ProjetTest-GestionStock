@@ -8,5 +8,5 @@ public interface ICategorie {
 	public int addCategorie(Categorie categorie);
 	public List<Categorie> listCategorie();
 	public int updateCategorie(Categorie categorie);
-	public int deleteCategorie(Categorie categorie);
+	public int deleteCategorie(int id);
 }

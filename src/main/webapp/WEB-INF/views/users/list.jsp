@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="../../../header.jsp"></jsp:include>
 <div class="container-fluid">
 	<div class="row">
@@ -7,25 +8,25 @@
 					<h3>Ajouter un utilisateur</h3>
 				</div>
 				<div class="card-body">
-					<form action="">
+					<form action="User" method="post">
 						<div class="form-group">
 							<label>Nom</label>
-							<input type="text" class="form-control" required="required">
+							<input type="text" name="nom" class="form-control" required="required">
 						</div>
 					
 						<div class="form-group">
 							<label>Prenom</label>
-							<input type="text" class="form-control" required="required">
+							<input type="text" name="prenom" class="form-control" required="required">
 						</div>
 						
 						<div class="form-group">
 							<label>Login</label>
-							<input type="email" class="form-control" required="required">
+							<input type="email" name="login" class="form-control" required="required">
 						</div>
 						
 						<div class="form-group">
 							<label>Mot de passe</label>
-							<input type="password" class="form-control" required="required">
+							<input type="password" name="password" class="form-control" required="required">
 						</div><br>
 						
 						<div class="form-group">
@@ -35,7 +36,7 @@
 					</form>
 			</div>
 		</div>
-		</div>
+	</div>
 		
 	<!-- Liste des utilisateurs -->
 	<div class="col-md-8">
@@ -53,6 +54,17 @@
 							<th>Action</th>
 							<th>Action</th>
 						</tr>
+						<c:forEach items="${list_users}" var="u">
+							<tr>
+								<td>${u.nom }</td>
+								<td>${u.prenom }</td>
+								<td>${u.login }</td>
+								<td>Voir</td>
+								<td>Modifier</td>
+								<td>Supprimer</td>
+							
+							</tr>
+						</c:forEach>
 					</table>
 				</div>
 		</div>

@@ -5,7 +5,12 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import sn.simplon.dao.CategorieImpl;
+import sn.simplon.dao.ICategorie;
+import sn.simplon.entities.Categorie;
+
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/Categorie")
 public class CategorieServlet extends HttpServlet {
@@ -14,17 +19,24 @@ public class CategorieServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-	
+	private ICategorie categoriedao;
     public CategorieServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
+    @Override
+    public void init() throws ServletException {
+    	categoriedao = new CategorieImpl();
+    
+    }
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/views/categories/list.jsp").forward(request, response);
+		List<Categorie> categories = categoriedao.listCategorie();
+		request.setAttribute("listCategorie", categories);
 		
 	}
 
@@ -34,7 +46,12 @@ public class CategorieServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String libelle = request.getParameter("libelle").toString();
+		
+		Categorie categorie = new Categorie();
+		categorie.setLibelle(libelle);
+		categoriedao.addCategorie(categorie);
+		response.sendRedirect("Categorie?page=list");
 	}
 
 }
