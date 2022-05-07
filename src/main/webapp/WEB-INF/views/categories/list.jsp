@@ -33,14 +33,21 @@
 				<div class="card-body">
 					<table class="table table-striped table-bordered">
 						<tr>
+							<th>ID</th>
 							<th>Libellé</th>
 							<th>Action</th>
 							<th>Action</th>
 							<th>Action</th>
 						</tr>
-						<c:forEach items="${listCategorie}" var="cat">
+						
+						<c:forEach items="${list_Categorie}" var="cat">
+						
 							<tr>
+								<td>${cat.id}</td>
 								<td>${cat.libelle}</td>
+								<a href=""></a><td>Voir</td></a>
+								<td>Modifier</td>
+								<td>Supprimer</td>
 							</tr>
 						</c:forEach>
 					</table>

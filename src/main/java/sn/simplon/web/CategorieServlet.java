@@ -34,9 +34,10 @@ public class CategorieServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/views/categories/list.jsp").forward(request, response);
 		List<Categorie> categories = categoriedao.listCategorie();
-		request.setAttribute("listCategorie", categories);
+		request.setAttribute("list_Categorie", categories);
+		request.getRequestDispatcher("WEB-INF/views/categories/list.jsp").forward(request, response);
+		
 		
 	}
 
@@ -51,7 +52,7 @@ public class CategorieServlet extends HttpServlet {
 		Categorie categorie = new Categorie();
 		categorie.setLibelle(libelle);
 		categoriedao.addCategorie(categorie);
-		response.sendRedirect("Categorie?page=list");
+		response.sendRedirect("Categorie");
 	}
 
 }

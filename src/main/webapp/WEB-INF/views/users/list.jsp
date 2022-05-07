@@ -52,22 +52,21 @@
 							<th>Login</th>
 							<th>Action</th>
 							<th>Action</th>
-							<th>Action</th>
+							
 						</tr>
-						<c:forEach items="${list_users}" var="u">
-							<tr>
+						
+						<c:forEach items="${users }" var="u">
+ 							<tr>
 								<td>${u.nom }</td>
 								<td>${u.prenom }</td>
 								<td>${u.login }</td>
-								<td>Voir</td>
 								<td>Modifier</td>
 								<td>Supprimer</td>
-							
 							</tr>
 						</c:forEach>
 					</table>
 				</div>
-		</div>
+			</div>
 		</div>
 	
 	</div>

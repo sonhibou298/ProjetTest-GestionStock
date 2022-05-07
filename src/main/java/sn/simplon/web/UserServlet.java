@@ -25,18 +25,20 @@ public class UserServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-    	@Override
-    	public void init(ServletConfig config) throws ServletException {
-    		userdao = new UserImpl(); 
-    	}
+    	
+   @Override
+	public void init(ServletConfig config) throws ServletException {
+		userdao = new UserImpl();  
+	}
+    	 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/views/users/list.jsp").forward(request, response);
-		List<User> users = userdao.listeUsers();
-		request.setAttribute("list_users", users); 
-//
+			List<User> users = userdao.listeUsers();
+			request.setAttribute("users", users);
+			request.getRequestDispatcher("WEB-INF/views/users/list.jsp").forward(request, response);
+			
 	}
 
 	/**

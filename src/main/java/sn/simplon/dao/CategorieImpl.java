@@ -39,10 +39,9 @@ public class CategorieImpl implements ICategorie {
 		try {
 			return em.createQuery("SELECT c FROM Categorie c").getResultList();
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 			return null;
 		}
-		
 		
 	}
 

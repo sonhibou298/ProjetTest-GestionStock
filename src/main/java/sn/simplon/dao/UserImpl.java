@@ -31,12 +31,8 @@ public class UserImpl implements IUser{
 
 	@SuppressWarnings("unchecked")
 	public List<User> listeUsers() {
-		try {
-			return em.createQuery("SELECT u FROM User u").getResultList();
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
+		List<User> listeUsers = em.createQuery("select u from User u ").getResultList();
+		return listeUsers;
 	}
 
 

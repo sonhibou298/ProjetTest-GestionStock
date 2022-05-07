@@ -75,8 +75,8 @@
                 <li data-username="Authentication Sign up Sign in reset password Change password Personal information profile settings map form subscribe" class="nav-item pcoded-hasmenu">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span class="pcoded-mtext">Administration</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="User?page=list" class="" target="_blank">Gestion Administration </a></li>
-                        <li class=""><a href="auth-signin.html" class="" target="_blank">Se déconnecter</a></li>
+                        <li class=""><a href="User?page=list" class="">Gestion Administration </a></li>
+                        <li class=""><a href="#" class="">Se déconnecter</a></li>
                     </ul>
                 </li>
             </ul>

@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="../../../header.jsp"></jsp:include>
 <div class="container-fluid">
 	<div class="row">
@@ -10,29 +11,31 @@
 					<form action="">
 						<div class="form-group">
 							<label>Nom du produit</label>
-							<input type="text" class="form-control" required="required">
+							<input type="text" class="form-control" name="nomProduit" required="required">
 						</div>
 					
 						<div class="form-group">
 							<label>Prix unitaire</label>
-							<input type="number" class="form-control" required="required">
+							<input type="number" class="form-control" name="prix" required="required">
 						</div>
 						
 						<div class="form-group">
 							<label>Quantité stock</label>
-							<input type="number" class="form-control" required="required">
+							<input type="number" class="form-control" name="qte" required="required">
 						</div>
 						
 						<div class="form-group">
 							<label>Date d'expiration</label>
-							<input type="date" class="form-control" required="required">
+							<input type="date" class="form-control" name="date" required="required">
 						</div>
 						
 						 <div class="form-group">
 						    <label for="exampleFormControlSelect1">Catégorie du produit</label>
-						    <select class="form-control" id="exampleFormControlSelect1" required="required">
-						      <option></option>
-						     
+						    <select class="form-control" name="categorie" id="exampleFormControlSelect1" required="required">
+						    <c:forEach items="${list_categories}" var="cat">
+						   
+						      <option value="${car.id}">${cat.libelle}</option>
+						      </c:forEach>
 						    </select>
 						  </div>
 						
