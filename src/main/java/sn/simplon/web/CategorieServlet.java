@@ -34,8 +34,13 @@ public class CategorieServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Categorie> categories = categoriedao.listCategorie();
-		request.setAttribute("list_Categorie", categories);
+		String page = request.getParameter("page");
+		if(page.equals("delete"))
+		{
+			int id = Integer.parseInt(request.getParameter("id"));
+			categoriedao.deleteCategorie(id);
+		}
+		request.setAttribute("list_Categorie", categoriedao.listCategorie());
 		request.getRequestDispatcher("WEB-INF/views/categories/list.jsp").forward(request, response);
 		
 		

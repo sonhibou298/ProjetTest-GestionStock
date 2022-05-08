@@ -33,6 +33,14 @@
 							<button type="submit" class="btn btn-outline-success">Ajouter</button>
 							<button type="reset" class="btn btn-outline-danger">Annuler</button>
 						</div>
+						<c:if test="${message != null}">
+							<c:if test="${message == 1 }">
+								<div class="alert alert-success">Utilisateur ajouté avec succes</div>
+							</c:if>
+							<c:if test="${message == 0 }">
+								<div class="alert alert-danger">Erreur donnée non ajoutée</div>
+							</c:if>
+						</c:if>
 					</form>
 			</div>
 		</div>
@@ -61,7 +69,8 @@
 								<td>${u.prenom }</td>
 								<td>${u.login }</td>
 								<td>Modifier</td>
-								<td>Supprimer</td>
+								<td><a onclick="return confirm('Voulez-vous supprimer cet utilisateur ?')" href="User?page=delete
+								&id=${u.id }">Supprimer</a></td>
 							</tr>
 						</c:forEach>
 					</table>

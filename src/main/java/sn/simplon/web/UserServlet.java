@@ -35,9 +35,16 @@ public class UserServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			List<User> users = userdao.listeUsers();
-			request.setAttribute("users", users);
-			request.getRequestDispatcher("WEB-INF/views/users/list.jsp").forward(request, response);
+		String page = request.getParameter("page");
+		if(page.equals("delete")) {
+			int id = Integer.parseInt(request.getParameter("id"));
+			userdao.deleteUser(id);
+			
+			
+		}
+		request.setAttribute("users", userdao.listeUsers());
+		request.getRequestDispatcher("WEB-INF/views/users/list.jsp").forward(request, response);
+
 			
 	}
 
@@ -57,6 +64,7 @@ public class UserServlet extends HttpServlet {
 		user.setPassword(password);
 		
 		userdao.add(user);
+		
 		response.sendRedirect("User?page=list");
 		
 	}
