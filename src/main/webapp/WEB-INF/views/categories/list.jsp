@@ -8,15 +8,22 @@
 					<h3>Formulaire d'ajout d'une catégorie</h3>
 				</div>
 				<div class="card-body">
-					<form action="Categorie" method="post">
+					<form action="Categorie
+		" method="post">
 						<div class="form-group">
 							<label>Libelle catégorie</label>
-							<input type="text" name="libelle" value="${cat.libelle }" class="form-control" required="required">
+							<input type="text" name="libelle" value="${categorie.libelle }" class="form-control" required="required">
 						</div><br>
 						
 						<div class="form-group">
-							<button type="submit" class="btn btn-outline-success">Ajouter</button>
+							<c:if test="${categorie == null}">
+								<button type="submit" class="btn btn-outline-success" name="ajouter">Ajouter</button> 
+								<button type="reset" class="btn btn-outline-danger">Annuler</button>
+							</c:if>
+							<c:if test="${categorie != null }">
+							<button type="submit" class="btn btn-outline-primary" name="action" value="update">Modifier</button> 
 							<button type="reset" class="btn btn-outline-danger">Annuler</button>
+							</c:if>
 							
 						</div>
 					</form>
@@ -46,7 +53,7 @@
 								<td>${cat.id}</td>
 								<td>${cat.libelle}</td>
 								<td>Voir</td>
-								<td><a href="User?page=edit&id=${cat.id}">Modifier</a></td>
+								<td><a href="Categorie?page=edit&id=${cat.id}">Modifier</a></td>
 								<td><a onclick="return confirm('Voulez-vous supprimer cette categorie')" href="Categorie?page=delete&id=${cat.id }">Supprimer</a></td>
 							</tr>
 						</c:forEach>

@@ -65,4 +65,13 @@ public class ProduitImpl implements IProduit{
 		}
 	}
 
+	public Produit getId(int id) {
+		try {
+			return em.find(Produit.class, id);
+		} catch (Exception e) {
+			return null;
+		}
+		
+	}
+
 }

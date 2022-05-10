@@ -71,4 +71,14 @@ public class CategorieImpl implements ICategorie {
 		}
 	}
 
+	public Categorie getId(int id) {
+		try {
+			return em.find(Categorie.class, id);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return null;
+		}
+		
+	}
+
 }

@@ -9,4 +9,5 @@ public interface IProduit {
 	public List<Produit> listProducts();
 	public int deleteProduct(int id);
 	public int updateProduct(Produit produit);
+	public Produit getId(int id);
 }
