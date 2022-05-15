@@ -13,9 +13,12 @@ import sn.simplon.entities.Categorie;
 import sn.simplon.entities.Produit;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import org.eclipse.persistence.jpa.jpql.parser.SimpleCaseExpressionBNF;
 
 @WebServlet("/Produit")
 public class ProduitServlet extends HttpServlet {
@@ -46,8 +49,7 @@ public class ProduitServlet extends HttpServlet {
 		List<Categorie> categories = categoriedao.listCategorie();
 		request.setAttribute("list_categories", categories);
 		request.getRequestDispatcher("WEB-INF/views/produits/list.jsp").forward(request, response);
-		
-		
+
 	}
 
 	/**
@@ -58,7 +60,21 @@ public class ProduitServlet extends HttpServlet {
 		String nomProduit = request.getParameter("nomProduit").toString();
 		float prix = Float.parseFloat(request.getParameter("prix"));
 		int quantite = Integer.parseInt(request.getParameter("qte"));
-		 
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		try {
+			Date date = sdf.parse(request.getParameter("date"));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Produit produit = new Produit();
+		produit.setNomProduit(nomProduit);
+		produit.setPrixUnitaire(prix);
+		produit.setQteStock(quantite);
+		produit.setIdCat(null);
+		produitdao.addProduct(produit);
+		response.sendRedirect("Produit?page=list");  
 		
 	}
 

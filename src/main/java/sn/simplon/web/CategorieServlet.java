@@ -44,16 +44,7 @@ public class CategorieServlet extends HttpServlet {
 			int id = Integer.parseInt(request.getParameter("id"));
 			Categorie cat =  categoriedao.getId(id);
 			request.setAttribute("categorie", cat);
-		} 
-		if (page.equals("update")) {
-			String libelle = request.getParameter("libelle").toString();
-			
-			Categorie categorie = new Categorie();
-			//categorie.setId(id);
-			categorie.setLibelle(libelle);
-			categoriedao.updateCategorie(categorie);
-		}
-		
+		} 	
 		request.setAttribute("list_Categorie", categoriedao.listCategorie());
 		request.getRequestDispatcher("WEB-INF/views/categories/list.jsp").forward(request, response);	 
 	}
@@ -63,16 +54,32 @@ public class CategorieServlet extends HttpServlet {
 	 */
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-			String libelle = request.getParameter("libelle").toString();
-			 
-			Categorie categorie = new Categorie();
-			categorie.setLibelle(libelle);
-			categoriedao.addCategorie(categorie);
-			response.sendRedirect("Categorie?page=list");
+			String page = request.getParameter("page");
+			if(page.equals("ajouter")) {
+				String libelle = request.getParameter("libelle").toString();
+				 
+				Categorie categorie = new Categorie();
+				categorie.setLibelle(libelle);
+				categoriedao.addCategorie(categorie);
+				response.sendRedirect("Categorie?page=list");
+			}
 		
-		
-		
+			
+			if (page.equals("update")) {
+				try {
+					int id = Integer.parseInt(request.getParameter("id"));
+					String libelle = request.getParameter("libelle").toString();
+					
+					Categorie categorie = new Categorie();
+					categorie.setId(id);
+					categoriedao.updateCategorie(categorie);
+					
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+				
+			}
 		
 	}
 

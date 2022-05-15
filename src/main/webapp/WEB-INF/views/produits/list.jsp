@@ -8,7 +8,7 @@
 					<h3>Formulaire d'ajout de produit</h3>
 				</div>
 				<div class="card-body">
-					<form action="">
+					<form action="Produit" method="post">
 						<div class="form-group">
 							<label>Nom du produit</label>
 							<input type="text" class="form-control" name="nomProduit" required="required">
@@ -31,11 +31,12 @@
 						
 						 <div class="form-group">
 						    <label for="exampleFormControlSelect1">Catégorie du produit</label>
-						    <select class="form-control" name="categorie" id="exampleFormControlSelect1" required="required">
+						    <select class="form-control" name="categorie" required="required">
+						    <option selected>Selectionner la categorie</option>
 						    <c:forEach items="${list_categories}" var="cat">
-						   
+						   	  
 						      <option value="${car.id}">${cat.libelle}</option>
-						      </c:forEach>
+						    </c:forEach>
 						    </select>
 						  </div>
 						
@@ -65,8 +66,18 @@
 							<th>Categorie</th>
 							<th>Action</th>
 							<th>Action</th>
-							<th>Action</th>
 						</tr>
+						<c:forEach items="${list_produits}" var="p">
+							<tr>
+								<td>${p.nomProduit }</td>
+								<td>${p.prixUnitaire }</td>
+								<td>${p.qteStock }</td>
+								<td>${p.dateExpiration }</td>
+								<td>${p.idCat }</td>
+								<td>Editer</td>
+								<td>Supprimer</td>
+							</tr>
+						</c:forEach>
 					</table>
 				</div>
 		</div>

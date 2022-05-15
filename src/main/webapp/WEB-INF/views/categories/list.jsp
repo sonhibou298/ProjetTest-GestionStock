@@ -10,6 +10,12 @@
 				<div class="card-body">
 					<form action="Categorie
 		" method="post">
+						
+						<div class="form-group">
+							<label>ID</label>
+							<input type="text" name="id" value="${categorie.id }" class="form-control" disabled="disabled">
+						</div>
+						
 						<div class="form-group">
 							<label>Libelle catégorie</label>
 							<input type="text" name="libelle" value="${categorie.libelle }" class="form-control" required="required">
@@ -17,11 +23,11 @@
 						
 						<div class="form-group">
 							<c:if test="${categorie == null}">
-								<button type="submit" class="btn btn-outline-success" name="ajouter">Ajouter</button> 
+								<button type="submit" class="btn btn-outline-success" name="page" value="ajouter">Ajouter</button> 
 								<button type="reset" class="btn btn-outline-danger">Annuler</button>
 							</c:if>
 							<c:if test="${categorie != null }">
-							<button type="submit" class="btn btn-outline-primary" name="action" value="update">Modifier</button> 
+							<button type="submit" class="btn btn-outline-primary" name="page" value="update">Modifier</button> 
 							<button type="reset" class="btn btn-outline-danger">Annuler</button>
 							</c:if>
 							
@@ -44,7 +50,6 @@
 							<th>Libellé</th>
 							<th>Action</th>
 							<th>Action</th>
-							<th>Action</th>
 						</tr>
 						
 						<c:forEach items="${list_Categorie}" var="cat">
@@ -52,7 +57,6 @@
 							<tr>
 								<td>${cat.id}</td>
 								<td>${cat.libelle}</td>
-								<td>Voir</td>
 								<td><a href="Categorie?page=edit&id=${cat.id}">Modifier</a></td>
 								<td><a onclick="return confirm('Voulez-vous supprimer cette categorie')" href="Categorie?page=delete&id=${cat.id }">Supprimer</a></td>
 							</tr>
